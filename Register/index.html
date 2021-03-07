@@ -1,0 +1,254 @@
+
+Join our Webinars! Now you can watch and learn more about Blockchain!
+How to create your first frontend for smart contracts
+In this tutorial I will show you step-by-step how to create your first front end to interact with a smart contract deployed at RSK local network, using only Javascript and HTML and connected to a wallet using a web3 provider.
+
+Overview
+Below is a summary of the steps to be taken to build our front end:
+
+Configure Metamask to connect to RSK testnet;
+Get some testnet R-BTCs at faucet;
+Connect Remix with RSK Testnet;
+Create, compile and deploy a smart contract on RSK Testnet using Remix;
+Initialise the project;
+Install web3.js;
+Create a javascript file;
+Create a html file;
+Install and run a local server;
+Interact with the smart contract.
+Steps 1 to 4 are explained in detail in the tutorial link below:
+
+using Remix and Metamask with RSK testnet
+Webinar
+We have run a webinar in which we run through this tutorial:
+
+
+The same webinar is also available in Español and Português.
+
+Check out our other webinars.
+
+Requirements
+Metamask
+Remix - web tool, online
+Node.js and NPM (Node Package Manager)
+Visual Studio Code (VSCode) or any other editor of your choice
+HTTP server: express
+web3.js
+As earlier mentioned, to install Metamask and connect to RSK testnet and to connect Remix with RSK Testnet are explained in detail in the tutorial link below:
+
+using Remix and Metamask with RSK testnet
+Node.js and NPM
+Node.js and NPM are needed, though both are usually installed at once.
+
+NB: To check if Node.js and NPM is already installed, input the following commands in the terminal:
+
+node --version
+npm --version
+node and npm version
+
+Go to Node.js if you need to install it.
+
+Visual Studio Code (VSCode)
+In this tutorial, We would use VSCode to create and deploy our project.
+
+To use VSCode download it here.
+
+Verify if your VS code installation was successful by typing the following command into the terminal:
+
+code -v
+visual code version
+
+Create the Register project
+Create a folder named Register, and start an npm project in the Register folder by typing the following commands below into the terminal:
+
+mkdir Register
+cd Register
+npm init -y
+For example, I will create a folder at this location - C:\RSK\
+
+My project can be located in the folder C:\RSK\Register.
+
+Register project
+
+Express
+Express is a Node.js web application framework that helps to develop web applications. It is a minimalist HTTP server.
+
+To install Express, input the command below into the terminal and press enter at your project location:
+
+npm install express --save
+More info:
+
+http://expressjs.com/
+
+https://www.npmjs.com/package/express
+
+Web3.js
+Web3.js helps us to develop websites or clients that interact with the blockchain - writing code that reads and writes data from the blockchain with smart contracts.
+
+The web3.js library is an Ethereum Javascript API which connects using the generic JSON-RPC spec. As RSK’s virtual machine implementation is compatible with the Ethereum Virtual Machine (EVM), it is possible to use web3.js to do the communications between the front-end and the RSK local node.
+
+The web3.js library is an Ethereum Javascript API which connects using the generic JSON-RPC spec. As RSK’s virtual machine implementation is compatible with the Ethereum Virtual Machine (EVM), it is possible to use web3.js to interact with the front end and the RSK local node.
+
+To install web3.js, input the command below into the terminal and press enter at your project location:
+
+npm install web3 --save
+More info:
+
+https://web3js.readthedocs.io/
+Check package.json
+package.json is a file created by npm with some configurations, including the packages which we installed before using the command npm init -y.
+
+After the installations, I will open the project folder named Register in VSCode and verify the file package.json. Let’s take a look at the dependencies in the file:
+
+package.json
+
+You will find the previously installed packages:
+
+ "dependencies": {
+   "express": "^4.17.1",
+   "web3": "^1.2.6"
+ }
+Deploy a smart contract
+This is explained in detail in the tutorial:
+
+using Remix and Metamask with RSK testnet
+We’ll do the relevant parts of that tutorial here.
+
+Remix
+Go to http://remix.ethereum.org/
+
+Remix Homepage
+
+NB: Be sure to click the Solidity button under Environment, as seen in the image above.
+
+We need this in order to compile our smart contract as our code is written in the Solidity language.
+
+Create a smart contract
+Create a new file
+
+File name: Register.sol
+
+Copy and paste the smart contract from the following gist, or copy and paste the code below:
+
+https://raw.githubusercontent.com/solangegueiros/dapp-register-rsk/master/register-rsk-web3-injected/register.sol
+
+pragma solidity 0.5.4;
+
+contract Register {
+    string private info;
+
+    function setInfo(string memory _info) public {
+        info = _info;
+    }
+
+    function getInfo() public view returns (string memory) {
+        return info;
+    }
+}
+Register.sol
+This smart contract has:
+
+A variable info to store a string
+A function getInfo() to return the string stored at variable info
+A function setInfo() to change the string stored at variable info
+Compile a smart contract
+In the 3rd button at the left side select Solidity compiler.
+
+Solidity Compiler
+
+Click the button Compile Register.sol.
+
+Compile Register.sol
+
+Deploy a smart contract
+In the left side panel, go to the button Deploy and run transactions.
+
+Under Environment, make sure you have selected the Injected Web3 option, as this tells Remix to use the Web3 provider injected by a browser plugin such as MetaMask or Nifty.
+
+Injected Web3
+
+Then click the button Deploy.
+
+Deploy and run transactions
+
+Ensure that you have tR-BTC in your wallet, as this is needed to pay gas fees when deploying the smart contracts. To do so, please follow this guide: Using Remix and Metamask with RSK testnet.
+
+When a smart contract is deployed with Remix, we can see it in the left panel under deploy and run transactions.
+
+Click on the copy button at the right side of the smart contract to copy the address of the smart contract. We will need it for use on the front end.
+
+Copy
+
+smart contract address
+
+In my example, the contract address is 0xc864D0fef177A69aFa8E302A1b90e450910A4c3E.
+
+Client-Side Application - The front end
+Now let’s start building out the front end that will interact with the smart contract.
+
+We have only 2 files in the front end:
+
+index.html
+index.js
+Index.html
+In Register folder, create a file named index.html.
+
+Copy and paste the smart contract from the following gist, or copy and paste the code below:
+
+https://raw.githubusercontent.com/solangegueiros/dapp-register-rsk/master/register-rsk-web3-injected/index.html
+
+<!DOCTYPE html>
+<html >
+  <head>
+    <title>Register information at Blockchain</title>
+
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
+    <script src="./index.js"></script>
+  </head>
+
+  <body class="container">
+
+    <h1 class="page-header">Register information at Blockchain - RSK network</h1>
+
+    <div class="row">
+      <div>
+        <h3 class="sub-header">Set information</h3>
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <table>
+              <tr>
+                <td><label for="newInfo">Info:</label> </td>
+                <td>
+                  <input class="form-control" id="newInfo">
+                </td>
+              </tr>
+            </table>
+          </div>
+          <a href="#" onclick="registerSetInfo()" class="btn btn-primary">Set</a>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <h3 class="sub-header">Get last information saved</h3>
+        <form class="form-inline" role="form">
+          <a href="#" onclick="registerGetInfo()" class="btn btn-primary">Get</a>
+          <div class="form-group">
+            <table>
+              <tr>
+                <td>Info:</td>
+                <td>
+                  <label id="lastInfo">
+                </td>
+              </tr>
+            </table>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>
