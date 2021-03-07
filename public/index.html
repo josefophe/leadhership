@@ -12,33 +12,38 @@
    margin-left:-10px;
    text-align:right;
    padding:10px;
-   font-family:arial;
+   font-family:calibri;
 }
 
 .main {
   
    width: 1500px;
-   height: 4300px;
+   height: 3700px;
    padding: 10px; 
    margin-left:-10px;  
    background-color:white;
-   font-family:arial;
+   font-family:calibri;
     
 	}
 .button{
-   background-color:white; 
-   color:#F9629F; 
+   background-color:#F9629F; 
+   color:white; 
    padding:10px;
    border-color:grey; 
    font-size:20px;
    cursor:pointer;
+   border-radius: 150px;
 }
 
 .button1:hover {
   background-color:#4d4d4d;
 }
 
-
+.h{
+   background-color: white;
+   color:#F9629F;
+   border: 2px grey solid;
+}
 
 .cat{
   
@@ -46,7 +51,7 @@
    height: 500px;
    padding: 10px; 
    margin-left:50px;  
-   background-color:#ffc0cb;
+   background-color:lightgrey;
     
 	}
 .box {
@@ -55,11 +60,11 @@
    height: 375px;
    padding: 10px; 
    margin-left:50px;  
-   background-color:#ffc0cb;
+   background-color:lightgrey;
     
 	}
 .footer{
-  background-color:#ffc0cb;
+  background-color:lightgrey;
    width:1500px;    
    height:200px;
    margin-top:40px;
@@ -78,20 +83,23 @@
 <body>
 <header class="head">
 <h1 style="color:grey; float:left; margin-top:1px; font-size:30px">LEAD<span class='her'>HER</span>SHIP</h1>
-<input type="button" class="button button1" style="border-right-color:white" onClick="location.href='Choice.html'" value="Portal">
-<input type="button" class="button button1" onClick="location.href='sign up.html'" value="Sign Up">
+<input type="button" class="button button1 h" style="border-right-color:white" onClick="location.href='Choice.html'" value="Portal">
+<input type="button" class="button button1 h" onClick="location.href='sign up.html'" value="Sign Up">
 
 
 </header>
 
 <div class="main">
-<img src="main image.jpg"style="margin-top:-33px; margin-left:-10px" width="1520px" height="580px"></img>
+<video style="margin-top:-33px; margin-left:-10px" width="1510px" height="580px" controls>
+   <source src="LeadHership.mp4" type="video/mp4">
+   <source src="LeadHership.ogg" type="video/ogg">
+</video>
 
 <br><br><br><br><hr style="height:3px;border-width:0px;color:black;background-color:black">
 
 
-<h1 style="margin-left:50px; font-size:60px">OLD MENTORS </h1>
-<p style="margin-left:50px; font-size:20px;color:#262626">Discover mentors from different parts of the world.</p>
+<h1 style="margin-left:50px; font-size:60px; color:#F9629F;">MEET OUR MENTORS </h1>
+<p style="margin-left:50px; font-size:20px;color:#262626">Connect with mentors from different parts of the world.</p>
 <div class="cat">
 <img src="Mentor2.jpg" width="300px" height="350px">
 <center>
@@ -101,7 +109,7 @@ Sarah
 <p style="color:gray">
 Level#2
 </p></b>
-<input type="button" class="button button1" value="WANT TO CONNECT"/>
+<input type="button" class="button button1" value="CONNECT"/>
 </center>
 
 </div>
@@ -115,7 +123,7 @@ Farah
 <p style="color:gray">
 Level#5
 </p></b>
-<input type="button" class="button button1" value="WANT TO CONNECT"/>
+<input type="button" class="button button1" value="CONNECT"/>
 </center>
 </div>
 
@@ -128,7 +136,7 @@ Laura
 <p style="color:gray">
 Level#4
 </p></b>
-<input type="button" class="button button1" value="WANT TO CONNECT"/>
+<input type="button" class="button button1" value="CONNECT"/>
 </center>
 
 </div>
@@ -142,15 +150,15 @@ Charis
 <p style="color:gray">
 Level#2
 </p></b>
-<input type="button" class="button button1" value="WANT TO CONNECT"/>
+<input type="button" class="button button1" value="CONNECT"/>
 </center>
 
 </div>
 
 <br><br><br><br><hr style="height:3px;border-width:0px;color:black;background-color:black">
 
-<h1 style="margin-left:50px; font-size:60px">NEW MENTORS </h1>
-<p style="margin-left:50px; font-size:20px;color:#262626">Love to have these new mentors</p>
+<h1 style="margin-left:50px; font-size:60px;color:#F9629F;">RISING MENTORS </h1>
+<p style="margin-left:50px; font-size:20px;color:#262626">Meet our upcoming mentors</p>
 <div class="cat">
 <img src="new1.jpg" width="300px" height="350px">
 <center>
@@ -160,7 +168,7 @@ Karishma
 <p style="color:gray">
 Level#1
 </p></b>
-<input type="button" class="button button1" value="WANT TO CONNECT"/>
+<input type="button" class="button button1" value="CONNECT"/>
 </center>
 
 </div>
@@ -174,7 +182,7 @@ Flaura
 <p style="color:gray">
 Level#1
 </p></b>
-<input type="button" class="button button1" value="WANT TO CONNECT"/>
+<input type="button" class="button button1" value="CONNECT"/>
 </center>
 </div>
 
@@ -187,7 +195,7 @@ Azima
 <p style="color:gray">
 Level#1
 </p></b>
-<input type="button" class="button button1" value="WANT TO CONNECT"/>
+<input type="button" class="button button1" value="CONNECT"/>
 </center>
 
 </div>
@@ -201,16 +209,13 @@ Emma
 <p style="color:gray">
 Level#1
 </p></b>
-<input type="button" class="button button1" value="WANT TO CONNECT"/>
+<input type="button" class="button button1" value="CONNECT"/>
 </center>
 
 </div>
 <br><br><br><br><hr style="height:3px;border-width:0px;color:black;background-color:black">
-<br><img src="interest1.jpg"style="margin-top:20px; margin-left:-10px" width="1520px" height="580px"></img>
-<br><br><br><br><hr style="height:3px;border-width:0px;color:black;background-color:black">
-
-<h1 style="margin-left:50px; font-size:60px">MENTEES </h1>
-<p style="margin-left:50px; font-size:20px;color:#262626">Learn to be a Mentor</p>
+<h1 style="margin-left:50px; font-size:60px;color:#F9629F;">MENTEES </h1>
+<p style="margin-left:50px; font-size:20px;color:#262626">Learn new skills and network</p>
 <div class="cat">
 <img src="mentee.jpg" width="300px" height="350px">
 <center>
@@ -220,7 +225,7 @@ Rabia
 <p style="color:gray">
 Mentee
 </p></b>
-<input type="button" class="button button1" value="WANT TO CONNECT"/>
+<input type="button" class="button button1" value="CONNECT"/>
 </center>
 
 </div>
@@ -234,7 +239,7 @@ Nora
 <p style="color:gray">
 Mentee
 </p></b>
-<input type="button" class="button button1" value="WANT TO CONNECT"/>
+<input type="button" class="button button1" value="CONNECT"/>
 </center>
 </div>
 
@@ -247,7 +252,7 @@ Palvi
 <p style="color:gray">
 Mentee
 </p></b>
-<input type="button" class="button button1" value="WANT TO CONNECT"/>
+<input type="button" class="button button1" value="CONNECT"/>
 </center>
 
 </div>
@@ -261,7 +266,7 @@ Zara
 <p style="color:gray">
 Mentee
 </p></b>
-<input type="button" class="button button1" value="WANT TO CONNECT"/>
+<input type="button" class="button button1" value="CONNECT"/>
 </center>
 
 </div>
@@ -273,7 +278,7 @@ Mentee
 
 
 
-<p style="margin-top:60px;color:gray;">
+<p style="margin-top:60px;color:black;">
 Our idea was born, in hackherthon – the land of mentors and mentees – where everyone can make it.<br>
  A fruitful platform where people fulfill their creative dreams, where diversity is the norm, and self-expression is celebrated.<br>
  From the coast to the valley, World's prolific ideas is our home, our heart, and our muse.<br>
@@ -285,7 +290,7 @@ Our idea was born, in hackherthon – the land of mentors and mentees – where 
 </div>
 
 <footer class="footer">
-<input type="button" class="button button1" style="border-right-color:white" onClick="location.href='contact us.html'" value="Contact Us">
+<input type="button" class="button button1 h" style="border-right-color:white" onClick="location.href='contact us.html'" value="Contact Us">
 <br><br>
 <p>©2020 LEADHERSHIP</p>
 <p>Privacy PolicyTerms of UseAdChoicesCookie SettingsContent Permission Terms
@@ -302,4 +307,3 @@ This site is intended for all consumers. Cookies and related technology are used
 
 </body>
 </html>
-
